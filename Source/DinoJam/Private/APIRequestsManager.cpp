@@ -50,23 +50,14 @@ void UAPIRequestsManager::OnHTTPGetResponseReceived(FHttpRequestPtr Request, FHt
 
 		int32 ResponseCode = Response->GetResponseCode();
 		UE_LOG(LogTemp, Warning, TEXT("Code: %d"), ResponseCode);
-		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Blue, "ResponseCode: ");
-		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Blue, FString::FromInt(ResponseCode));
+		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Green, "ResponseCode: ");
+		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Green, FString::FromInt(ResponseCode));
 
 		FString Content = Response->GetContentAsString();
 		UE_LOG(LogTemp, Warning, TEXT("Content: %s"), *Content);
 
-		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Blue, "Content");
-		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Blue, Content);
-
-		TSharedPtr<FJsonObject> JsonObject;
-
-		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-
-		//Deserialize the json data given Reader and the actual object to deserialize
-		if (FJsonSerializer::Deserialize(Reader, JsonObject))
-		{
-		}
+		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Green, "Content");
+		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Green, Content);
 	}
 	else
 	{
@@ -80,23 +71,14 @@ void UAPIRequestsManager::OnHTTPPostResponseReceived(FHttpRequestPtr Request, FH
 
 		int32 ResponseCode = Response->GetResponseCode();
 		UE_LOG(LogTemp, Warning, TEXT("Code: %d"), ResponseCode);
-		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Blue, "ResponseCode: ");
-		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Blue, FString::FromInt(ResponseCode));
+		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Green, "ResponseCode: ");
+		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Green, FString::FromInt(ResponseCode));
 
 		FString Content = Response->GetContentAsString();
 		UE_LOG(LogTemp, Warning, TEXT("Content: %s"), *Content);
 
-		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Blue, "Content");
-		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Blue, Content);
-
-		TSharedPtr<FJsonObject> JsonObject;
-
-		TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
-
-		//Deserialize the json data given Reader and the actual object to deserialize
-		if (FJsonSerializer::Deserialize(Reader, JsonObject))
-		{
-		}
+		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Green, "Content");
+		GEngine->AddOnScreenDebugMessage(91, 100.0f, FColor::Green, Content);
 	}
 	else
 	{
