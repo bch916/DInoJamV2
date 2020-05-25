@@ -13,6 +13,7 @@
 
  UAPIRequestsManager::UAPIRequestsManager()
 {
+	// To initialize the Http Module
 	Http = &FHttpModule::Get();
 }
 
